@@ -30,7 +30,6 @@ body {
 #pic {
   -webkit-filter: drop-shadow(10px 15px 15px #babacf);
           filter: drop-shadow(10px 15px 15px #babacf);
-  background-image: url("images/image-tanya.jpg");
   background-size: cover;
 }
 
