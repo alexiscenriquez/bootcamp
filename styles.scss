@@ -1,0 +1,107 @@
+@import "./variables";
+
+body{
+    height: 100vh;
+    font-size: $fontSize;
+
+    
+    //justify-content: center;
+   
+}
+.wrapper{
+  
+    font-family: $font;
+ font-weight: 300;
+font-size: 0.5em;
+
+}
+
+#quote{
+color:$dBlue;
+font-weight: 300;
+line-height: 20px;
+}
+#person{
+    font-size: 0.8em;
+    margin: 20px auto;
+    text-align: center;
+}
+#name{
+    font-weight:700 ;
+    color: $dBlue;
+}
+#role{
+color: $gBlue;
+font-weight: 500;
+}
+#pic{
+    filter: drop-shadow(10px 15px 15px $gBlue);
+    background-image: url("images/image-tanya.jpg");
+    background-size: cover;
+}
+
+#control{
+    height: 30px;
+    width: 60px;
+    background-color: white;
+    position: absolute;
+    content: "";
+    bottom: -15px;
+    border-radius: 50px;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    margin: auto;
+    &::after{
+        width: 12px;
+        height: 12px;
+       background-size: contain;
+       background-repeat: no-repeat;
+       content: "";
+right: 8px;
+top: 10px;
+        background-image: url("images/icon-next.svg");
+        position: absolute;
+
+    
+     z-index: 1;
+    }
+    &::before{
+        width: 12px;
+        height: 12px;
+       background-size: contain;
+       background-repeat: no-repeat;
+       content: "";
+left:8px;
+top: 10px;
+        background-image: url("images/icon-next.svg");
+        position: absolute;
+transform:rotate(180deg);
+    
+     z-index: 1;
+    }
+}
+@media(max-width:700px){
+body{
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#name{
+    display: block;
+}
+.wrapper{
+    margin-bottom: 50px;
+   
+}
+#quote{
+    width: 90%;
+    text-align: center;
+ margin: auto;
+}
+#pic{
+    width: 75%;
+    height: 250px;
+   
+    margin: 50px auto;
+}
+}

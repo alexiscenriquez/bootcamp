@@ -1,0 +1,110 @@
+body {
+  height: 100vh;
+  font-size: 32px;
+}
+
+.wrapper {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.5em;
+}
+
+#quote {
+  color: #202046;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+#person {
+  font-size: 0.8em;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#name {
+  font-weight: 700;
+  color: #202046;
+}
+
+#role {
+  color: #babacf;
+  font-weight: 500;
+}
+
+#pic {
+  -webkit-filter: drop-shadow(10px 15px 15px #babacf);
+          filter: drop-shadow(10px 15px 15px #babacf);
+  background-image: url("images/image-tanya.jpg");
+  background-size: cover;
+}
+
+#control {
+  height: 30px;
+  width: 60px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  bottom: -15px;
+  border-radius: 50px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  margin: auto;
+}
+
+#control::after {
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  right: 8px;
+  top: 10px;
+  background-image: url("images/icon-next.svg");
+  position: absolute;
+  z-index: 1;
+}
+
+#control::before {
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  left: 8px;
+  top: 10px;
+  background-image: url("images/icon-next.svg");
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  #name {
+    display: block;
+  }
+  .wrapper {
+    margin-bottom: 50px;
+  }
+  #quote {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+  }
+  #pic {
+    width: 75%;
+    height: 250px;
+    margin: 50px auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
