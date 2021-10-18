@@ -1,5 +1,26 @@
 body {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
   font-size: 32px;
+  position: relative;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  background-position: top 10px right 10px;
+  background-image: url("images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body::after {
+  position: absolute;
+  content: "";
+  background-position: bottom center;
+  background-image: url("images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .wrapper {
@@ -11,6 +32,14 @@ body {
 #quote {
   color: #202046;
   font-weight: 300;
+}
+
+#q-wrapper {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  background-image: url("images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-size: 50px;
 }
 
 #person {
@@ -31,6 +60,8 @@ body {
   -webkit-filter: drop-shadow(10px 15px 15px #babacf);
           filter: drop-shadow(10px 15px 15px #babacf);
   background-size: cover;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 #control {
@@ -47,8 +78,8 @@ body {
 #control::after {
   width: 12px;
   height: 12px;
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
   content: "";
   right: 8px;
   top: 10px;
@@ -59,8 +90,8 @@ body {
 #control::before {
   width: 12px;
   height: 12px;
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
   content: "";
   left: 8px;
   top: 10px;
@@ -84,15 +115,19 @@ body {
   }
   #quote {
     width: 90%;
-    max-width: 450px;
+    max-width: 350px;
     text-align: center;
     margin: auto;
+    padding: 10px;
     line-height: 20px;
+  }
+  #q-wrapper {
+    background-position: top center;
   }
   #pic {
     width: 75%;
-    height: 250px;
-    max-width: 450px;
+    height: 280px;
+    max-width: 350px;
     margin: 50px auto;
   }
   #person {
@@ -103,45 +138,76 @@ body {
     right: 0;
     bottom: -10px;
   }
+  body::after {
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+  }
 }
 
 @media (min-width: 801px) {
   body {
-    padding: 0 70px;
+    padding: 0px 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body::before {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    height: 400px;
+    width: 730px;
+  }
+  body::after {
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    justify-self: flex-end;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  body .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-self: flex-end;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
-  .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-    position: relative;
-  }
-  #quote {
+  body #quote {
     width: 60%;
-    font-size: 1.2em;
+    font-size: 1.4em;
     max-width: 600px;
-    line-height: 25px;
+    line-height: 30px;
     position: relative;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
-  #pic {
+  body #q-wrapper {
+    background-position: left 50px top;
+  }
+  body #pic {
     position: absolute;
     height: 400px;
     width: 400px;
@@ -149,9 +215,13 @@ body {
         align-self: flex-end;
     -ms-grid-column-align: center;
         justify-self: center;
+    top: 50px;
   }
-  #control {
+  body #control {
     left: 30px;
+  }
+  body #name {
+    margin-right: 5px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

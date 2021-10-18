@@ -1,10 +1,32 @@
 @import "./variables";
-
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin image {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 body {
-  //  height: 100vh;
+  transition: all 1s ease-in;
   font-size: $fontSize;
+  position: relative;
+  margin: 0;
+  &::before {
+    content: "";
+    background-position: top 10px right 10px;
+    background-image: url("images/pattern-bg.svg");
+    @include image();
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    background-position: bottom center;
+    background-image: url("images/pattern-curve.svg");
 
-  //justify-content: center;
+    @include image();
+  }
 }
 .wrapper {
   font-family: $font;
@@ -15,7 +37,12 @@ body {
 #quote {
   color: $dBlue;
   font-weight: 300;
- 
+}
+#q-wrapper {
+  transition: all 1s ease-in;
+  background-image: url("images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-size: 50px;
 }
 #person {
   font-size: 0.8em;
@@ -31,7 +58,7 @@ body {
 #pic {
   filter: drop-shadow(10px 15px 15px $gBlue);
   background-size: cover;
- 
+  transition: all 0.1s ease-in;
 }
 
 #control {
@@ -47,36 +74,30 @@ body {
   &::after {
     width: 12px;
     height: 12px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    @include image();
     content: "";
     right: 8px;
     top: 10px;
     background-image: url("images/icon-next.svg");
     position: absolute;
-
-  
   }
   &::before {
     width: 12px;
     height: 12px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    @include image();
     content: "";
     left: 8px;
     top: 10px;
     background-image: url("images/icon-next.svg");
     position: absolute;
     transform: rotate(180deg);
-
- 
   }
   #person {
     margin: 20px auto;
     text-align: center;
   }
 }
-@media (max-width:800px) {
+@media (max-width: 800px) {
   #name {
     display: block;
   }
@@ -85,60 +106,95 @@ body {
   }
   #quote {
     width: 90%;
-    max-width: 450px;
+    max-width: 350px;
     text-align: center;
     margin: auto;
+    padding: 10px;
     line-height: 20px;
+  }
+  #q-wrapper {
+    background-position: top center;
   }
   #pic {
     width: 75%;
-    height: 250px;
-max-width: 450px;
+    height: 280px;
+    max-width: 350px;
     margin: 50px auto;
   }
   #person {
     text-align: center;
   }
-  #control{
+  #control {
     left: 0;
     right: 0;
     bottom: -10px;
   }
+  body {
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      z-index: -1;
+    }
+  }
 }
 @media (min-width: 801px) {
   body {
-    padding:0 70px;
-    height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: center;
-  }
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  height: 100%;
-    position: relative;
- 
-    
-  }
-  #quote {
-    width: 60%;
-    font-size: 1.2em;
-    max-width: 600px; 
-    line-height: 25px;
-position: relative;
-  }
-  #pic {
-   position: absolute;
-    height: 400px;
-    width: 400px;
- align-self: flex-end;
- justify-self: center;
+    padding: 0px 70px;
 
+    @include flex();
 
-  }
-  #control{
-     left: 30px; 
+    &::before {
+      position: absolute;
+      top: 5px;
+      right: 25px;
+      align-self: flex-end;
+      height: 400px;
+      width: 730px;
+    }
+
+    &::after {
+      width: 350px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      justify-self: flex-end;
+      @include image();
+    }
+    .wrapper {
+      @include flex();
+      justify-self: flex-end;
+
+      height: 100vh;
+    }
+    #quote {
+      width: 60%;
+      font-size: 1.4em;
+      max-width: 600px;
+      line-height: 30px;
+      position: relative;
+      align-self: center;
+    }
+    #q-wrapper {
+      background-position: left 50px top;
+    }
+    #pic {
+      position: absolute;
+      height: 400px;
+      width: 400px;
+      align-self: flex-end;
+      justify-self: center;
+      top: 50px;
+    }
+    #control {
+      left: 30px;
+    }
+    #name {
+      margin-right: 5px;
+    }
+    footer {
+    }
   }
 }
