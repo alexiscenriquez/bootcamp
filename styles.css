@@ -54,7 +54,6 @@ body {
   top: 10px;
   background-image: url("images/icon-next.svg");
   position: absolute;
-  z-index: 1;
 }
 
 #control::before {
@@ -69,7 +68,6 @@ body {
   position: absolute;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  z-index: 1;
 }
 
 #control #person {
@@ -141,6 +139,7 @@ body {
     font-size: 1.2em;
     max-width: 600px;
     line-height: 25px;
+    position: relative;
   }
   #pic {
     position: absolute;
@@ -150,7 +149,6 @@ body {
         align-self: flex-end;
     -ms-grid-column-align: center;
         justify-self: center;
-    z-index: -1;
   }
   #control {
     left: 30px;

@@ -15,6 +15,7 @@ body {
 #quote {
   color: $dBlue;
   font-weight: 300;
+ 
 }
 #person {
   font-size: 0.8em;
@@ -41,7 +42,7 @@ body {
   content: "";
   bottom: -15px;
   border-radius: 50px;
- 
+
   margin: auto;
   &::after {
     width: 12px;
@@ -54,7 +55,7 @@ body {
     background-image: url("images/icon-next.svg");
     position: absolute;
 
-    z-index: 1;
+  
   }
   &::before {
     width: 12px;
@@ -68,7 +69,7 @@ body {
     position: absolute;
     transform: rotate(180deg);
 
-    z-index: 1;
+ 
   }
   #person {
     margin: 20px auto;
@@ -126,6 +127,7 @@ max-width: 450px;
     font-size: 1.2em;
     max-width: 600px; 
     line-height: 25px;
+position: relative;
   }
   #pic {
    position: absolute;
@@ -133,10 +135,10 @@ max-width: 450px;
     width: 400px;
  align-self: flex-end;
  justify-self: center;
- z-index: -1;
+
 
   }
   #control{
-     left: 30px;
+     left: 30px; 
   }
 }
