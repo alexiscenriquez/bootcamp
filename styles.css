@@ -176,7 +176,7 @@ body::after {
     right: 25px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    height: 550px;
+    height: 480px;
     width: 730px;
     background-position: top 0 right 10px;
   }
@@ -219,7 +219,7 @@ body::after {
   }
   body #pic {
     position: absolute;
-    height: 450px;
+    height: 400px;
     width: 40%;
     -ms-flex-item-align: end;
         align-self: flex-end;
