@@ -8,7 +8,6 @@ body {
 
 body::before {
   content: "";
-  background-position: top 10px right 10px;
   background-image: url("images/pattern-bg.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -126,8 +125,8 @@ body::after {
   }
   #pic {
     width: 75%;
-    height: 280px;
-    max-width: 350px;
+    height: 250px;
+    max-width: 300px;
     margin: 50px auto;
   }
   #person {
@@ -137,6 +136,16 @@ body::after {
     left: 0;
     right: 0;
     bottom: -10px;
+  }
+  body::before {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 350px;
+    width: 300px;
+    background-position: top 0 center;
   }
   body::after {
     bottom: 0;
@@ -167,8 +176,9 @@ body::after {
     right: 25px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    height: 400px;
+    height: 480px;
     width: 730px;
+    background-position: top 0 right 10px;
   }
   body::after {
     width: 350px;

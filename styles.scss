@@ -15,7 +15,7 @@ body {
   margin: 0;
   &::before {
     content: "";
-    background-position: top 10px right 10px;
+
     background-image: url("images/pattern-bg.svg");
     @include image();
   }
@@ -117,8 +117,8 @@ body {
   }
   #pic {
     width: 75%;
-    height: 280px;
-    max-width: 350px;
+    height: 250px;
+    max-width: 300px;
     margin: 50px auto;
   }
   #person {
@@ -130,6 +130,16 @@ body {
     bottom: -10px;
   }
   body {
+    &::before {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 350px;
+      width: 300px;
+      background-position: top 0 center;
+    }
     &::after {
       bottom: 0;
       left: 0;
@@ -150,8 +160,9 @@ body {
       top: 5px;
       right: 25px;
       align-self: flex-end;
-      height: 400px;
+      height: 480px;
       width: 730px;
+      background-position: top 0 right 10px;
     }
 
     &::after {
